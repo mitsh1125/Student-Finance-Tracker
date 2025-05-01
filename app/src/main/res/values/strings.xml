@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">My Student Finance Tracker App</string>
+
+    <string-array name="categories">
+        <item>Food</item>
+        <item>Groceries</item>
+        <item>Bills</item>
+        <item>Transportation</item>
+    </string-array>
+
+    <string-array name="description">
+        <item>Jolibee</item>
+        <item>For bh</item>
+        <item>For kuryente</item>
+        <item>Pedicab</item>
+
+</string-array>
+</resources>
