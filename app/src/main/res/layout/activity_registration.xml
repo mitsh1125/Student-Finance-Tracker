@@ -35,7 +35,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerpicture"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.058">
 
         <TextView
             android:id="@+id/registering"
@@ -96,32 +96,17 @@
 
 
             <EditText
-                android:id="@+id/firstname"
+                android:id="@+id/fullname"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@android:color/transparent"
-                android:hint="First Name"
+                android:hint="Full Name"
                 android:fontFamily="@font/inter"
                 android:textSize="18sp"
                 android:inputType="textEmailAddress"
                 android:padding="10dp"
                 android:paddingStart="12dp" />
 
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="7dp" />
-            <EditText
-                android:id="@+id/lastname"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@android:color/transparent"
-                android:hint="Last Name"
-                android:textSize="18sp"
-                android:fontFamily="@font/inter"
-                android:inputType="textEmailAddress"
-                android:padding="10dp"
-                android:paddingStart="12dp" />
 
             <View
                 android:layout_width="match_parent"
@@ -160,21 +145,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="7dp" />
 
-            <EditText
-                android:id="@+id/confirmpassword"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@android:color/transparent"
-                android:hint="Confirm Password"
-                android:textSize="18sp"
-                android:fontFamily="@font/inter"
-                android:inputType="textPassword"
-                android:padding="10dp"
-                android:paddingStart="12dp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="7dp" />
 
             <Button
                 android:id="@+id/signupbutton"
@@ -182,7 +152,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#D5F9DE"
                 android:fontFamily="@font/inter_semibold"
-                android:text="Sign up"
+                android:text="Register"
                 android:textColor="@color/black" />
 
             <View
