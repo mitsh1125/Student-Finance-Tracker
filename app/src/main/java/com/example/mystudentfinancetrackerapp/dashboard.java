@@ -1,5 +1,4 @@
 package com.example.mystudentfinancetrackerapp;
-
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -43,11 +42,13 @@ public class dashboard extends AppCompatActivity {
 
 
                 if (item.getItemId() == R.id.home) {
-                    Toast.makeText(dashboard.this, "WELCOME TO HOME", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(dashboard.this, HomeFragment.class);
-                    startActivity(intent);
-                    return true;
+                    selectedFragment = new HomeFragment();
+                } else if (item.getItemId() == R.id.add) {
+                    selectedFragment = new AddFragment();
+
                 }
+
+
                 // Add more else-if blocks here for other menu items
                 // else if (item.getItemId() == R.id.profile) {
                 //     selectedFragment = new ProfileFragment();
@@ -71,7 +72,10 @@ public class dashboard extends AppCompatActivity {
         });
     }
     private void loadFragment(Fragment fragment) {
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,fragment).commit();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.frame_layout,fragment)
+                .commit();
 
 
     }
