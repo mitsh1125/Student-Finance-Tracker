@@ -1,8 +1,10 @@
 package com.example.mystudentfinancetrackerapp;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.Toast;
-import android.content.Intent;
+
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,11 +12,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.example.mystudentfinancetrackerapp.databinding.ActivityDashboardBinding;
-import com.google.android.material.navigation.NavigationBarView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class dashboard extends AppCompatActivity {
 
@@ -22,20 +22,21 @@ public class dashboard extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+       getWindow().setFlags(
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        );
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_dashboard);
-
-
 
         bottomNavigationView = findViewById(R.id.bottom_nav_view);
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener(){
 
-
-
+            // Set default fragment
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment selectedFragment = null;
@@ -43,8 +44,14 @@ public class dashboard extends AppCompatActivity {
 
                 if (item.getItemId() == R.id.home) {
                     selectedFragment = new HomeFragment();
+
+
                 } else if (item.getItemId() == R.id.add) {
                     selectedFragment = new AddFragment();
+
+
+                } else if (item.getItemId() == R.id.settings) {
+                    selectedFragment = new SettingsFragment();
 
                 }
 

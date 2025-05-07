@@ -7,6 +7,7 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -33,6 +34,13 @@ public class login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // ✅ Set fullscreen
+        getWindow().setFlags(
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        );
+
         setContentView(R.layout.activity_login);
 
         // Initialize Firebase Realtime Database
@@ -68,7 +76,7 @@ public class login extends AppCompatActivity {
                             // Check if the password matches
                             if (storedPassword != null && storedPassword.equals(password)) {
                                 // Password matches, proceed to dashboard
-                                Toast.makeText(login.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(login.this, "Login Successful",  Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(login.this, dashboard.class));
                                 finish();
                                 return;

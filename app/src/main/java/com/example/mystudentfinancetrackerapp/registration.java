@@ -68,6 +68,7 @@ public class registration extends AppCompatActivity {
                 databaseReference.child(userId).setValue(user)
                         .addOnSuccessListener(unused -> {
                             Toast.makeText(registration.this, "Registration Successful", Toast.LENGTH_SHORT).show();
+                            getIntent().putExtra("fullname", fullNameStr); // ✅ Pass full name
                             startActivity(new Intent(registration.this, dashboard.class)); // change to your Dashboard activity
                             finish();
                         })
